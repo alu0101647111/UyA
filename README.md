@@ -1,6 +1,6 @@
 # UyA
 
-## Práctica 2 - prototipo de página web
+## Prácticas
 
 ### Miembros del grupo
 
