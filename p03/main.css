@@ -86,7 +86,7 @@ a:hover {
 }
 
 a:visited {
-  color: blue;
+  color: #000080; /*Navy Blue*/
 }
 
 /* Enlaces dentro de tablas */
