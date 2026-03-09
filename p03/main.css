@@ -1,78 +1,77 @@
 /* Contenedor general */
 .contenedor {
-    width: 770px;
-    margin: 0 auto;
-    font-family: Arial;
-    color: black;
-    font-size: 1.5em;
+  width: 770px;
+  margin: 0 auto;
+  font-family: Arial;
+  color: black;
+  font-size: 1.5em;
 }
 
 /* Cabecera */
 .barra {
-    border: 1px solid red;
-    height: 100px;
-    background-image: url("cabecera.jpg");
-    padding: 10px;
+  border: 1px solid red;
+  height: 100px;
+  background-image: url("cabecera.jpg");
+  padding: 10px;
 }
 
 /* Menú dentro de la cabecera */
 .menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0.3em;
 }
 
 .menu li {
-    display: inline-block;
-    background-color: #ddd;
-    padding: 0.3em;
-    margin-bottom: 0.7em;
-    margin-right: 10px;
+  display: inline-block;
+  background-color: #ddd;
+  padding: 0.3em;
+  margin-bottom: 0.7em;
+  margin-right: 10px;
 }
 
 .menu li:hover {
-    background-color: #bbb;
+  background-color: #bbb;
 }
 
 /* Contenedor columnas */
 .parent {
-    border: 1px solid purple;
-    overflow: hidden;
-    margin-top: 20px;
-    width: 770px;
+  border: 1px solid purple;
+  overflow: hidden;
+  margin-top: 20px;
+  width: 770px;
 }
 
 /* Columnas */
 .principal {
-    border: 1px solid green;
-    float: left;
-    width: 426px;
-    padding: 10px;
-    height: 700px;
+  border: 1px solid green;
+  float: left;
+  width: 440px;
+  padding: 5px;
+  height: 850px;
 }
 
 .secundaria {
-    border: 1px solid yellow;
-    float: left;
-    width: 150px;
-    padding: 10px;
-    height: 700px;
+  border: 1px solid yellow;
+  float: left;
+  width: 164px;
+  padding: 5px;
+  height: 850px;
 }
 
 .enlace {
-    border: 1px solid blue;
-    float: left;
-    width: 130px;
-    padding: 10px;
-    height: 700px;
+  border: 1px solid blue;
+  float: left;
+  width: 130px;
+  padding: 5px;
+  height: 850px;
 }
 
 /* Pie */
 .pie {
-    border: 1px solid pink;
-    clear: both;
-    margin-top: 20px;
-    padding: 10px;
+  border: 1px solid pink;
+  clear: both;
+  margin-top: 20px;
+  padding: 10px;
 }
 
 /* Enlaces */
@@ -81,16 +80,16 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  color: red;
-}
-
 a:visited {
   color: #000080; /*Navy Blue*/
 }
 
+a:hover {
+  color: red;
+}
+
 /* Enlaces dentro de tablas */
-table a {
+table a, table a:visited {
   color: green;
 }
 
