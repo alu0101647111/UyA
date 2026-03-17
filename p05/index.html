@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reserva Alojamiento</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        .error { color: red; border: 1px solid red; padding: 10px; margin-bottom: 10px; }
+        .ok { color: green; }
+    </style>
+</head>
+<body>
+
+<h1>Reserva tu estancia</h1>
+
+<div id="errores"></div>
+
+<form id="formReserva">
+
+    <label>Nombre completo:</label><br>
+    <input type="text" id="nombre"><br><br>
+
+    <label>Email:</label><br>
+    <input type="text" id="email"><br><br>
+
+    <label>Fecha entrada:</label><br>
+    <input type="date" id="entrada"><br><br>
+
+    <label>Fecha salida:</label><br>
+    <input type="date" id="salida"><br><br>
+
+    
+    <label>Huéspedes:</label><br>
+    <input type="number" id="huespedes" min="1" value="1"><br><br>
+
+    <label>Tipo habitación:</label><br>
+    <select id="habitacion">
+        <option value="individual">Individual</option>
+        <option value="doble">Doble</option>
+        <option value="suite">Suite</option>
+    </select><br><br>
+
+    <label>Extras:</label><br>
+    <input type="checkbox" id="desayuno"> Desayuno<br>
+    <input type="checkbox" id="parking"> Parking<br><br>
+
+    <label>Código descuento:</label><br>
+    <input type="text" id="codigo"><br><br>
+
+    <button type="submit">Reservar</button>
+    <button type="button" id="limpiar">Limpiar</button>
+
+</form>
+
+<h2>Resumen</h2>
+<div id="resumen"></div>
+
+<h3>Precio estimado: <span id="precioEstimado">0€</span></h3>
+
+<script src="script.js"></script>
+</body>
+</html>
