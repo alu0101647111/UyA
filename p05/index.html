@@ -1,90 +1,92 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Reserva Alojamiento</title>
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<head>
+  <meta charset="UTF-8">
+  <title>Reserva Alojamiento</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body class="bg-light">
 
-<div class="container vh-100 d-flex justify-content-center align-items-center">
+  <div class="container vh-100 d-flex justify-content-center align-items-center">
 
     <div class="card p-4 shadow" style="width: 800px;">
 
-        <h2 class="text-center mb-3">Reserva tu estancia</h2>
+      <h2 class="text-center mb-3">Reserva tu estancia</h2>
 
-        <div id="errores"></div>
+      <div id="errores"></div>
 
-        <form id="formReserva">
+      <form id="formReserva">
 
-            <div class="mb-2">
-                <label>Nombre completo</label>
-                <input type="text" id="nombre" class="form-control">
-            </div>
+        <div class="mb-2">
+          <label>Nombre completo</label>
+          <input type="text" id="nombre" class="form-control">
+        </div>
 
-            <div class="mb-2">
-                <label>Email</label>
-                <input type="text" id="email" class="form-control">
-            </div>
+        <div class="mb-2">
+          <label>Email</label>
+          <input type="text" id="email" class="form-control">
+        </div>
 
-            <div class="mb-2">
-                <label>Fecha entrada</label>
-                <input type="date" id="entrada" class="form-control">
-            </div>
+        <div class="mb-2">
+          <label>Fecha entrada</label>
+          <input type="date" id="entrada" class="form-control">
+        </div>
 
-            <div class="mb-2">
-                <label>Fecha salida</label>
-                <input type="date" id="salida" class="form-control">
-            </div>
+        <div class="mb-2">
+          <label>Fecha salida</label>
+          <input type="date" id="salida" class="form-control">
+        </div>
 
-            <div class="mb-2">
-                <label>Huéspedes</label>
-                <input type="number" id="huespedes" class="form-control" value="1" min="1">
-            </div>
+        <div class="mb-2">
+          <label>Huéspedes</label>
+          <input type="number" id="huespedes" class="form-control" value="1" min="1">
+        </div>
 
-            <div class="mb-2">
-                <label>Tipo habitación</label>
-                <select id="habitacion" class="form-select">
-                    <option value="individual">Individual</option>
-                    <option value="doble">Doble</option>
-                    <option value="suite">Suite</option>
-                </select>
-            </div>
+        <div class="mb-2">
+          <label>Tipo habitación</label>
+          <select id="habitacion" class="form-select">
+            <option value="individual">Individual</option>
+            <option value="doble">Doble</option>
+            <option value="suite">Suite</option>
+          </select>
+        </div>
 
-            <div class="mb-2">
-                <label>Extras</label><br>
-                <input type="checkbox" id="desayuno"> Desayuno<br>
-                <input type="checkbox" id="parking"> Parking
-            </div>
+        <div class="mb-2">
+          <label>Extras</label><br>
+          <input type="checkbox" id="desayuno"> Desayuno<br>
+          <input type="checkbox" id="parking"> Parking
+        </div>
 
-            <div class="mb-2">
-                <label>Código descuento</label>
-                <input type="text" id="codigo" class="form-control">
-            </div>
+        <div class="mb-2">
+          <label>Código descuento</label>
+          <input type="text" id="codigo" class="form-control">
+        </div>
 
-            <div class="d-flex gap-2 mt-2">
-                <button type="submit" class="btn btn-primary w-50">Reservar</button>
-                <button type="button" id="limpiar" class="btn btn-secondary w-50">Limpiar</button>
-            </div>
+        <div class="d-flex gap-2 mt-2">
+          <button type="submit" class="btn btn-primary w-50">Reservar</button>
+          <button type="button" id="limpiar" class="btn btn-secondary w-50">Limpiar</button>
+        </div>
 
-        </form>
+      </form>
 
-        <hr>
+      <hr>
 
-        <h5 class="text-center">Resumen</h5>
-        <div id="resumen"></div>
+      <h5 class="text-center">Resumen</h5>
+      <div id="resumen"></div>
 
-        <h6 class="text-center mt-3">
-            Precio estimado: <span id="precioEstimado">0€</span>
-        </h6>
+      <h6 class="text-center mt-3">
+        Precio estimado: <span id="precioEstimado">0€</span>
+      </h6>
 
     </div>
 
-</div>
+  </div>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
