@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const erroresDiv = document.getElementById("errores");
     const resumenDiv = document.getElementById("resumen");
     const precioEstimadoSpan = document.getElementById("precioEstimado");
-
     const limpiarBtn = document.getElementById("limpiar");
 
+    // EVENTO RESERVAR
     form.addEventListener("submit", function (e) {
         e.preventDefault();
 
@@ -15,18 +15,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let errores = [];
 
-        // Leer valores
-        const nombre = document.getElementById("nombre").value;
-        const email = document.getElementById("email").value;
+        // Leer datos
+        const nombre = document.getElementById("nombre").value.trim();
+        const email = document.getElementById("email").value.trim();
         const entrada = document.getElementById("entrada").value;
         const salida = document.getElementById("salida").value;
         const huespedes = parseInt(document.getElementById("huespedes").value);
         const habitacion = document.getElementById("habitacion").value;
         const desayuno = document.getElementById("desayuno").checked;
         const parking = document.getElementById("parking").checked;
-        const codigo = document.getElementById("codigo").value;
+        const codigo = document.getElementById("codigo").value.trim();
 
-        // Validaciones
+        // VALIDACIONES
         if (nombre === "") errores.push("El nombre es obligatorio");
         if (email === "" || email.indexOf("@") === -1) errores.push("Email inválido");
         if (entrada === "") errores.push("Fecha de entrada obligatoria");
@@ -36,11 +36,13 @@ document.addEventListener("DOMContentLoaded", function () {
         let fechaSalida = new Date(salida);
 
         if (entrada && salida && fechaSalida <= fechaEntrada) {
-            errores.push("La fecha de salida debe ser posterior");
+            errores.push("La fecha de salida debe ser posterior a la de entrada");
         }
 
+        // Mostrar errores
         if (errores.length > 0) {
-            erroresDiv.className = "error";
+            erroresDiv.className = "alert alert-danger";
+
             errores.forEach(err => {
                 let p = document.createElement("p");
                 p.textContent = err;
@@ -49,10 +51,10 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Calcular noches
+        // CALCULAR NOCHES
         let noches = (fechaSalida - fechaEntrada) / (1000 * 60 * 60 * 24);
 
-        // Precios
+        // PRECIOS
         let precioNoche = 0;
         if (habitacion === "individual") precioNoche = 50;
         if (habitacion === "doble") precioNoche = 80;
@@ -63,16 +65,18 @@ document.addEventListener("DOMContentLoaded", function () {
         if (desayuno) total += 10 * huespedes * noches;
         if (parking) total += 15 * noches;
 
-        // Descuento
+        // DESCUENTO
         if (codigo === "PROMO10") {
             total *= 0.9;
         }
 
-        // Mostrar resumen (createElement)
+        // CREAR RESUMEN
         let lista = document.createElement("ul");
+        lista.className = "list-group";
 
         function addItem(texto) {
             let li = document.createElement("li");
+            li.className = "list-group-item";
             li.textContent = texto;
             lista.appendChild(li);
         }
@@ -82,24 +86,25 @@ document.addEventListener("DOMContentLoaded", function () {
         addItem("Noches: " + noches);
         addItem("Huéspedes: " + huespedes);
         addItem("Habitación: " + habitacion);
-        addItem("Extras: " + 
-            (desayuno ? "Desayuno " : "") + 
-            (parking ? "Parking" : "")
+        addItem("Extras: " +
+            (desayuno ? "Desayuno " : "") +
+            (parking ? "Parking" : "Ninguno")
         );
-        addItem("Total: " + total.toFixed(2) + "€");
+        addItem("TOTAL: " + total.toFixed(2) + "€");
 
         resumenDiv.appendChild(lista);
     });
 
-    // Botón limpiar
+    // BOTÓN LIMPIAR
     limpiarBtn.addEventListener("click", function () {
         form.reset();
         resumenDiv.innerHTML = "";
         erroresDiv.innerHTML = "";
+        erroresDiv.className = "";
         precioEstimadoSpan.textContent = "0€";
     });
 
-    // Precio estimado automático
+    // PRECIO ESTIMADO AUTOMÁTICO
     form.addEventListener("change", calcularEstimado);
 
     function calcularEstimado() {
