@@ -39,8 +39,7 @@
           </div>
           <div class="card-body">
           <!--Formulario de reserva con campos para los datos del viaje y de contacto, con un mensaje simulado al enviar el formulario -->
-            <form
-              data-mensaje="Simulación: Tu solicitud de reserva ha sido registrada con éxito. Nos pondremos en contacto pronto.">
+            <form>
               <h5 class="mb-3 text-muted">Datos del Viaje</h5>
               <div class="row">
                 <div class="col-md-6 mb-3">
@@ -58,11 +57,11 @@
               <div class="row">
                 <div class="col-md-4 mb-3">
                   <label class="form-label">Fecha de llegada</label>
-                  <input type="date" class="form-control" required>
+                  <input type="date" class="form-control" id="fechaLlegada" required>
                 </div>
                 <div class="col-md-4 mb-3">
                   <label class="form-label">Hora del vuelo</label>
-                  <input type="time" class="form-control" required>
+                  <input type="time" class="form-control" id="horaLlegada" required>
                 </div>
                 <div class="col-md-4 mb-3">
                   <label class="form-label">Pasajeros</label>
