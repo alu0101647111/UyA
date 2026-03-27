@@ -1,4 +1,4 @@
-/* style.css */
+
 body {
   padding-top: 70px; /* Compensa la barra de navegación fija */
   display: flex;
@@ -7,8 +7,12 @@ body {
 }
 
 .hero-section {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1549140602-0db4bbaf365f?auto=format&fit=crop&q=80&w=1200') no-repeat center center;
+  /* Añadimos un degradado negro con opacidad para que se aprecie la imagen */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url('principal.jpg');
+  
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
   color: white;
-  padding: 100px 0;
+  padding: 150px 0; 
 }

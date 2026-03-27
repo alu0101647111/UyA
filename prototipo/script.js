@@ -1,3 +1,6 @@
+/**
+ * Inicializa los formularios al cargar el documento para manejar su envío
+ */
 document.addEventListener('DOMContentLoaded', () => {
   const forms = document.querySelectorAll('form');
 
