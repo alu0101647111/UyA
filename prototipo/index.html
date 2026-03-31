@@ -11,7 +11,7 @@
 
 <body>
   <!-- Barra de navegación que apunta a los diferentes apartados del sitio web -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" aria-label="Barra de navegación">
     <div class="container">
       <a class="navbar-brand" href="index.html">Tenerife Transfers</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -29,18 +29,18 @@
   </nav>
 
   <!-- Sección principal con un mensaje de bienvenida, una breve descripción del servicio y un botón para reservar un traslado -->
-  <div class="container-fluid p-0">
+  <main class="container-fluid p-0" aria-label="Sección principal">
     <section class="hero-section text-center">
       <div class="container">
         <h1 class="display-4 fw-bold">Tu viaje comienza aquí</h1>
-        <p class="lead mb-4">Traslados privados, rápidos y seguros desde el Aeropuerto de Tenerife Sur a cualquier punto
+        <p class="lead mb-4">Traslados privados, rápidos y seguros desde los aeropuertos de Tenerife a cualquier punto
           de la isla.</p>
         <a href="reservas.html" class="btn btn-warning btn-lg">Reservar mi Taxi Ahora</a>
       </div>
     </section>
 
     <!--Beneficios del servicio (texto con características)-->
-    <div class="container mt-5 mb-5">
+    <div class="container mt-5 mb-5" id="contenido-principal">
       <div class="row text-center">
         <div class="col-md-4">
           <h3>Puntualidad</h3>
@@ -56,9 +56,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </main>
 
-  <footer class="bg-dark text-white text-center py-3 mt-auto">
+  <footer class="bg-dark text-white text-center py-3 mt-auto" aria-label="Pie de página">
     <p class="mb-0">© 2026 Tenerife Transfers. Todos los derechos reservados.</p>
   </footer>
 

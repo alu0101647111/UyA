@@ -16,3 +16,9 @@ body {
   color: white;
   padding: 150px 0; 
 }
+
+:focus-visible {
+  outline: 3px solid #ffc107;
+  outline-offset: 2px;
+  box-shadow: 0 0 5px rgba(255, 193, 7, 0.8);
+}
