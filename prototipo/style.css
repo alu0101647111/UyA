@@ -22,3 +22,16 @@ body {
   outline-offset: 2px;
   box-shadow: 0 0 5px rgba(255, 193, 7, 0.8);
 }
+
+.map-section {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.map-section iframe {
+  width: 100%;
+  min-height: 320px;
+  border: 0;
+  display: block;
+}
