@@ -41,41 +41,33 @@ document.addEventListener("DOMContentLoaded", function () {
         'TFS': {
           'costa adeje': { p1: 35, p2: 50 },
           'arona': { p1: 35, p2: 50 },
-          'puerto de la cruz': { p1: 90, p2: 125 }
+          'puerto de la cruz': { p1: 90, p2: 125 },
+          'santa cruz': { p1: 50, p2: 100}
         },
         'TFN': {
           'puerto de la cruz': { p1: 40, p2: 55 },
-          'santa cruz': { p1: 25, p2: 35 }
+          'santa cruz': { p1: 25, p2: 35 },
+          'costa adeje': { p1: 45, p2: 75 },
+          'arona': { p1: 45, p2: 75 }
         }
       };
 
       let precioFinal = 0;
-      let encontrado = false;
+      const destinoData = tarifas[origen][destinoText];
 
-      // Buscar si el destino introducido coincide con la base de datos
-      if (tarifas[origen] && tarifas[origen][destinoText]) {
-        const destinoData = tarifas[origen][destinoText];
-        // Asignar precio según el número de pasajeros
-        precioFinal = numPasajeros <= 4 ? destinoData.p1 : destinoData.p2;
-        encontrado = true;
-      }
+      // Asignar precio según el número de pasajeros
+      precioFinal = numPasajeros <= 4 ? destinoData.p1 : destinoData.p2;
+      encontrado = true;
 
       const resDiv = document.getElementById('resultadoPrecio');
       const precioSpan = document.getElementById('precioValor');
       const btnConfirmar = document.getElementById('btnConfirmar');
 
-      if (encontrado) {
-        // Mostrar el precio y habilitar el botón de confirmar
-        precioSpan.innerText = precioFinal + "€";
-        resDiv.classList.remove('d-none', 'alert-danger');
-        resDiv.classList.add('alert-info');
-        btnConfirmar.disabled = false;
-      } else {
-        // Mostrar un aviso si no se encuentra el destino
-        alert("Destino no encontrado en la tabla de tarifas automáticas. Por favor, asegúrate de escribir: Costa Adeje, Arona, Puerto de la Cruz o Santa Cruz.");
-        btnConfirmar.disabled = true;
-        resDiv.classList.add('d-none');
-      }
+      // Mostrar el precio y habilitar el botón de confirmar
+      precioSpan.innerText = precioFinal + "€";
+      resDiv.classList.remove('d-none', 'alert-danger');
+      resDiv.classList.add('alert-info');
+      btnConfirmar.disabled = false;
     });
   }
 });
